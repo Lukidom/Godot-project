@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://nscpmb7al64t"]
+
+[ext_resource type="Script" uid="uid://dgmae3bhmxmro" path="res://wall.gd" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://cxocema3ry5rf" path="res://mirror.gd" id="2_0xm2m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ig7tw"]
+size = Vector2(50, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
+size = Vector2(20, 10)
+
+[node name="Main" type="Node2D" unique_id=1850613762]
+script = ExtResource("1_0xm2m")
+
+[node name="laserStart" type="Node2D" parent="." unique_id=229602412]
+
+[node name="Goal" type="Area2D" parent="." unique_id=954421500]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal" unique_id=854601541 groups=["goals"]]
+shape = SubResource("RectangleShape2D_ig7tw")
+
+[node name="Walls" type="Node2D" parent="." unique_id=588663057]
+script = ExtResource("1_0xm2m")
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls" unique_id=1358189068 groups=["Walls"]]
+
+[node name="Mirror" type="Area2D" parent="." unique_id=582319338 groups=["mirror"]]
+script = ExtResource("2_0xm2m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mirror" unique_id=2047143043]
+shape = SubResource("RectangleShape2D_h2yge")
